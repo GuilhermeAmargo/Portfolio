@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>Portfólio</title>
+</head>
+
+<body>
+	<h1>Automação Industrial</h1>
+    <section id="aviso">
+        <h2>AVISO!</h2>
+        <p>Devido alguns problemas com os arquivos de vídeos decidi deixar um link para uma pasta no drive para seu acesso: <a href="https://drive.google.com/drive/folders/1cIcaFc8hSWs4dulCC9K7PqgvmDtEJbdz?usp=sharing">aqui</a></p>
+    </section>
+    <br>
+	<section>
+		<h2>Conteúdo:</h2>
+		<ul>
+			<li><a href="#Arduino">Arduino</a></li>
+			<li><a href="#TinkercadSection">Tinkercad</a></li>
+			<li><a href="#ESP32">ESP32</a></li>
+			<li><a href="#VejaMais">Veja mais</a></li>
+		</ul>
+	</section>
+	<button onclick="topFunction()" id="myBtn"><img src="https://cdn-icons-png.flaticon.com/128/3838/3838683.png" id="arrow"></button>
+	<br>
+	<section id="Arduino">
+		<h2>Arduino</h2>
+		<p>Nesta disciplina, começamos com o Arduino, abordando inicialmente a estrutura do código e as variáveis.</p>
+		<h3>Variáveis</h3>
+		<p>Aqui está um exemplo que trabalhamos:</p>
+		<div class="container">
+			<img src="Assets/variaveis.png" alt="Exemplo de variáveis">
+		</div>
+		<h3>void loop() e void setup()</h3>
+		<p>Em seguida, abordamos as funções <code>void setup()</code> e <code>void loop()</code>, que são, respectivamente:</p>
+		<p>A função <code>void setup()</code> é executada apenas uma vez e é muito útil para configurar os modos dos pinos (OUTPUT/INPUT) do projeto:</p>
+		<div class="container">
+			<img src="Assets/setup.png" alt="Exemplo de setup">
+		</div>
+		<p>Por outro lado, a função <code>void loop()</code> é executada repetidamente em um ciclo, sendo onde a maior parte do código funciona:</p>
+		<div class="container">
+			<img src="Assets/loop.png" alt="Exemplo de loop">
+		</div>
+		<p>Com esses conceitos explorados, ficou mais fácil seguir uma ordem na estrutura dos programas produzidos a partir desse ponto:</p>
+		<ol>
+			<li>Definição de variáveis / importação de bibliotecas</li>
+			<li><code>void setup()</code></li>
+			<li><code>void loop()</code></li>
+			<li>Funções adicionais</li>
+		</ol>
+		<p>Os trabalhos seguintes foram realizados em forma de listas, abordando variáveis, setup, loop e funções presentes no Arduino.</p>
+		<p>Um exemplo de código produzido em uma dessas listas pode ser encontrado aqui:</p>
+		<div class="container">
+			<img src="Assets/lista.png" alt="Exemplo de lista">
+		</div>
+		<p>Até esse ponto, trabalhamos apenas com pinos digitais, até que foram introduzidas as entradas analógicas do Arduino.</p>
+		<p>Este é um exemplo produzido utilizando a função analógica <code>analogWrite()</code> em um LED:</p>
+		<div class="container">
+			<img src="Assets/analogico.png" alt="Exemplo de analogWrite">
+		</div>
+	</section>
+	<br>
+	<section id="TinkercadSection">
+		<h2>Tinkercad</h2>
+		<p>Como o Arduino requer componentes para sua realização, utilizamos o Tinkercad para montar os projetos realizados:</p>
+		<div class="container">
+			<img src="Assets/TinkercadLogo.png" id="Tinkercad">
+		</div>
+		<P>Segue abaixo 10 exemplos explicados que foram realizados:</P>
+		<h3>01 - <p>Criar um contador crescente que vai do zero ao nove com um clique do botão. </h3>
+		</p>
+		<div class="container">
+			<pre>
+            int g = 9;
+            int f = 8;
+            int e = 7;
+            int d = 6;
+            int c = 5;
+            int b = 4;
+            int a = 3;
+            int segs[] = {3, 4, 5, 6, 7, 8, 9};
+            int botao = 2;
+            bool ultimoEstadoBotao = 0;
+            int numeroAtual = 0;
+            
+            void setup() {
+                for(int i = 0; i < sizeof(segs) / sizeof(segs[0]); i++) {
+                    pinMode(segs[i], OUTPUT);
+                }
+                pinMode(botao, INPUT);
+            }
+            
+            void loop() {
+                bool EstadoBotao = digitalRead(botao);
+            
+                if (EstadoBotao == HIGH) {
+                    for (int i = 0; i < 1; i++) {
+                        for (int zero = segs[0]; zero < 9; zero++) {
+                            digitalWrite(zero, HIGH);
+                        }
+                        delay(1000);
+                        for (int erasezero = segs[0]; erasezero <= segs[6]; erasezero++) {
+                            digitalWrite(erasezero, LOW);
+                        }
+                        delay(1000);
+                        for (int one = segs[1]; one < segs[3]; one++) {
+                            digitalWrite(one, HIGH);
+                        }
+                        delay(1000);
+                        for (int eraseone = segs[1]; eraseone <= segs[6]; eraseone++) {
+                            digitalWrite(eraseone, LOW);
+                        }
+                        delay(1000);
+                        digitalWrite(a, HIGH);
+                        digitalWrite(b, HIGH);
+                        digitalWrite(g, HIGH);
+                        digitalWrite(e, HIGH);
+                        digitalWrite(d, HIGH);
+                        delay(1000);
+                        for (int erasetwo = segs[0]; erasetwo <= segs[6]; erasetwo++) {
+                            digitalWrite(erasetwo, LOW);
+                        }
+                        delay(1000);
+                        digitalWrite(a, HIGH);
+                        digitalWrite(b, HIGH);
+                        digitalWrite(c, HIGH);
+                        digitalWrite(d, HIGH);
+                        digitalWrite(g, HIGH);
+                        delay(1000);
+                        for (int erasethree = segs[0]; erasethree <= segs[6]; erasethree++) {
+                            digitalWrite(erasethree, LOW);
+                        }
+                        delay(1000);
+                        digitalWrite(b, HIGH);
+                        digitalWrite(c, HIGH);
+                        digitalWrite(f, HIGH);
+                        digitalWrite(g, HIGH);
+                        delay(1000);
+                        for (int erasefour = segs[0]; erasefour <= segs[6]; erasefour++) {
+                            digitalWrite(erasefour, LOW);
+                        }
+                        delay(1000);
+                        digitalWrite(a, HIGH);
+                        digitalWrite(f, HIGH);
+                        digitalWrite(g, HIGH);
+                        digitalWrite(c, HIGH);
+                        digitalWrite(d, HIGH);
+                        delay(1000);
+                        for (int erasefive = segs[0]; erasefive <= segs[6]; erasefive++) {
+                            digitalWrite(erasefive, LOW);
+                        }
+                        delay(1000);
+                        digitalWrite(a, HIGH);
+                        digitalWrite(f, HIGH);
+                        digitalWrite(g, HIGH);
+                        digitalWrite(c, HIGH);
+                        digitalWrite(d, HIGH);
+                        digitalWrite(e, HIGH);
+                        delay(1000);
+                        for (int erasesix = segs[0]; erasesix <= segs[6]; erasesix++) {
+                            digitalWrite(erasesix, LOW);
+                        }
+                        delay(1000);
+                        for (int seven = segs[0]; seven < segs[3]; seven++) {
+                            digitalWrite(seven, HIGH);
+                        }
+                        delay(1000);
+                        for (int eraseseven = segs[0]; eraseseven <= segs[6]; eraseseven++) {
+                            digitalWrite(eraseseven, LOW);
+                        }
+                        delay(1000);
+                        for (int eight = segs[0]; eight <= segs[6]; eight++) {
+                            digitalWrite(eight, HIGH);
+                        }
+                        delay(1000);
+                        for (int eraseeight = segs[0]; eraseeight <= segs[6]; eraseeight++) {
+                            digitalWrite(eraseeight, LOW);
+                        }
+                        delay(1000);
+                        digitalWrite(a, HIGH);
+                        digitalWrite(b, HIGH);
+                        digitalWrite(c, HIGH);
+                        digitalWrite(f, HIGH);
+                        digitalWrite(g, HIGH);
+                        delay(1000);
+                        for (int erasenine = segs[0]; erasenine <= segs[6]; erasenine++) {
+                            digitalWrite(erasenine, LOW);
+                        }
+                        delay(1000);
+                    }
+                }
+            }
+                </pre>
+			<video controls>
+				<source src="" type="video/mp4">
+            </video>
+		</div>
+		<p>Neste exemplo, utilizou-se um display de sete segmentos para realizar a contagem de 0 a 9 com um único acionamento de botão. Para isso, foi definida a configuração de cada segmento do display. Utilizou-se uma sequência de comandos digitalWrite para acionar os segmentos adequados a cada número. Além disso, um laço de repetição for foi empregado para facilitar a limpeza do display e permitir a continuidade da sequência, com um atraso de 1 segundo entre cada número.</p>
+		<h3>02 - <p>Criar um contador decrescente que vai do nove ao zero com um clique do botão.</p>
+		</h3>
+		<div class="container">
+			<pre>
+            int g = 9;
+            int f = 8;
+            int e = 7;
+            int d = 6;
+            int c = 5;
+            int b = 4;
+            int a = 3;
+            int segs[] = {3, 4, 5, 6, 7, 8, 9};
+            int botao = 2;
+            bool ultimoEstadoBotao = 0;
+            int numeroAtual = 0;
+            
+            void setup() {
+                for(int i = 0; i < sizeof(segs) / sizeof(segs[0]); i++) {
+                    pinMode(segs[i], OUTPUT);
+                }
+                pinMode(botao, INPUT);
+            }
+            
+            void loop() {
+                bool EstadoBotao = digitalRead(botao);
+            
+                if (EstadoBotao == HIGH) {
+                    for (int i = 0; i < 1; i++) {}
+                    digitalWrite(a, HIGH);
+                    digitalWrite(b, HIGH);
+                    digitalWrite(c, HIGH);
+                    digitalWrite(f, HIGH);
+                    digitalWrite(g, HIGH);
+                    delay(1000);
+                    for(int erasenine = segs[0]; erasenine <= segs[6]; erasenine++) {
+                        digitalWrite(erasenine, LOW);
+                    }
+                    delay(1000);
+                    for(int eight = segs[0]; eight <= segs[6]; eight++) {
+                        digitalWrite(eight, HIGH);
+                    }
+                    delay(1000);
+                    for(int eraseeight = segs[0]; eraseeight <= segs[6]; eraseeight++) {
+                        digitalWrite(eraseeight, LOW);
+                    }
+                    delay(1000);
+                    for(int seven = segs[0]; seven < segs[3]; seven++) {
+                        digitalWrite(seven, HIGH);
+                    }
+                    delay(1000);
+                    for(int eraseseven = segs[0]; eraseseven <= segs[6]; eraseseven++) {
+                        digitalWrite(eraseseven, LOW);
+                    }
+                    delay(1000);
+                    digitalWrite(a, HIGH);
+                    digitalWrite(f, HIGH);
+                    digitalWrite(g, HIGH);
+                    digitalWrite(c, HIGH);
+                    digitalWrite(d, HIGH);
+                    digitalWrite(e, HIGH);
+                    delay(1000);
+                    for(int erasesix = segs[0]; erasesix <= segs[6]; erasesix++) {
+                        digitalWrite(erasesix, LOW);
+                    }
+                    delay(1000);
+                    digitalWrite(a, HIGH);
+                    digitalWrite(f, HIGH);
+                    digitalWrite(g, HIGH);
+                    digitalWrite(c, HIGH);
+                    digitalWrite(d, HIGH);
+                    delay(1000);
+                    for(int erasefive = segs[0]; erasefive <= segs[6]; erasefive++) {
+                        digitalWrite(erasefive, LOW);
+                    }
+                    delay(1000);
+                    digitalWrite(b, HIGH);
+                    digitalWrite(c, HIGH);
+                    digitalWrite(f, HIGH);
+                    digitalWrite(g, HIGH);
+                    delay(1000);
+                    for(int erasefour = segs[0]; erasefour <= segs[6]; erasefour++) {
+                        digitalWrite(erasefour, LOW);
+                    }
+                    delay(1000);
+                    digitalWrite(a, HIGH);
+                    digitalWrite(b, HIGH);
+                    digitalWrite(c, HIGH);
+                    digitalWrite(d, HIGH);
+                    digitalWrite(g, HIGH);
+                    delay(1000);
+                    for(int erasethree = segs[0]; erasethree <= segs[6]; erasethree++) {
+                        digitalWrite(erasethree, LOW);
+                    }
+                    delay(1000);
+                    digitalWrite(a, HIGH);
+                    digitalWrite(b, HIGH);
+                    digitalWrite(g, HIGH);
+                    digitalWrite(e, HIGH);
+                    digitalWrite(d, HIGH);
+                    delay(1000);
+                    for(int erasetwo = segs[0]; erasetwo <= segs[6]; erasetwo++) {
+                        digitalWrite(erasetwo, LOW);
+                    }
+                    delay(1000);
+                    for(int one = segs[1]; one < segs[3]; one++) {
+                        digitalWrite(one, HIGH);
+                    }
+                    delay(1000);
+                    for(int eraseone = segs[1]; eraseone <= segs[6]; eraseone++) {
+                        digitalWrite(eraseone, LOW);
+                    }
+                    delay(1000);
+                    for (int zero = segs[0]; zero < 9; zero++) {
+                        digitalWrite(zero, HIGH);
+                    }
+                    delay(1000);
+                    for(int erasezero = segs[0]; erasezero <= segs[6]; erasezero++) {
+                        digitalWrite(erasezero, LOW);
+                    }
+                }
+            }
+                </pre>
+			<video controls>
+				<source src="" type="video/mp4">
+			</video>
+		</div>
+		<p>Neste exemplo, utilizou-se a mesma base, mas de forma decrescente. Foi necessário apenas alterar a ordem de ligação e limpeza dos segmentos para que a contagem ocorresse do maior para o menor número.</p>
+		<h3>03 - <p>Criar um contador que vai do zero ao nove e depois do nove ao zero com um clique do botão.</p>
+		</h3>
+		<div class="container">
+			<pre>
+            int g = 9;
+            int f = 8;
+            int e = 7;
+            int d = 6;
+            int c = 5;
+            int b = 4;
+            int a = 3;
+            int segs[] = {3, 4, 5, 6, 7, 8, 9};
+            int botao = 2;
+            bool ultimoEstadoBotao = 0;
+            int numeroAtual = 0;
+            
+            void setup() {
+                for(int i = 0; i < sizeof(segs) / sizeof(segs[0]); i++) {
+                    pinMode(segs[i], OUTPUT);
+                }
+                pinMode(botao, INPUT);
+            }
+            
+            void loop() {
+                bool EstadoBotao = digitalRead(botao);
+            
+                if (EstadoBotao == HIGH) {
+                    for (int i = 0; i < 1; i++) {
+                        for (int zero = segs[0]; zero < 9; zero++) {
+                            digitalWrite(zero, HIGH);
+                        }
+                        delay(1000);
+                        for(int erasezero = segs[0]; erasezero <= segs[6]; erasezero++) {
+                            digitalWrite(erasezero, LOW);
+                        }
+                        delay(1000);
+                        for(int one = segs[1]; one < segs[3]; one++) {
+                            digitalWrite(one, HIGH);
+                        }
+                        delay(1000);
+                        for(int eraseone = segs[1]; eraseone <= segs[6]; eraseone++) {
+                            digitalWrite(eraseone, LOW);
+                        }
+                        delay(1000);
+                        digitalWrite(a, HIGH);
+                        digitalWrite(b, HIGH);
+                        digitalWrite(g, HIGH);
+                        digitalWrite(e, HIGH);
+                        digitalWrite(d, HIGH);
+                        delay(1000);
+                        for(int erasetwo = segs[0]; erasetwo <= segs[6]; erasetwo++) {
+                            digitalWrite(erasetwo, LOW);
+                        }
+                        delay(1000);
+                        digitalWrite(a, HIGH);
+                        digitalWrite(b, HIGH);
+                        digitalWrite(c, HIGH);
+                        digitalWrite(d, HIGH);
+                        digitalWrite(g, HIGH);
+                        delay(1000);
+                        for(int erasethree = segs[0]; erasethree <= segs[6]; erasethree++) {
+                            digitalWrite(erasethree, LOW);
+                        }
+                        delay(1000);
+                        digitalWrite(b, HIGH);
+                        digitalWrite(c, HIGH);
+                        digitalWrite(f, HIGH);
+                        digitalWrite(g, HIGH);
+                        delay(1000);
+                        for(int erasefour = segs[0]; erasefour <= segs[6]; erasefour++) {
+                            digitalWrite(erasefour, LOW);
+                        }
+                        delay(1000);
+                        digitalWrite(a, HIGH);
+                        digitalWrite(f, HIGH);
+                        digitalWrite(g, HIGH);
+                        digitalWrite(c, HIGH);
+                        digitalWrite(d, HIGH);
+                        delay(1000);
+                        for(int erasefive = segs[0]; erasefive <= segs[6]; erasefive++) {
+                            digitalWrite(erasefive, LOW);
+                        }
+                        delay(1000);
+                        digitalWrite(a, HIGH);
+                        digitalWrite(f, HIGH);
+                        digitalWrite(g, HIGH);
+                        digitalWrite(c, HIGH);
+                        digitalWrite(d, HIGH);
+                        digitalWrite(e, HIGH);
+                        delay(1000);
+                        for(int erasesix = segs[0]; erasesix <= segs[6]; erasesix++) {
+                            digitalWrite(erasesix, LOW);
+                        }
+                        delay(1000);
+                        for(int seven = segs[0]; seven < segs[3]; seven++) {
+                            digitalWrite(seven, HIGH);
+                        }
+                        delay(1000);
+                        for(int eraseseven = segs[0]; eraseseven <= segs[6]; eraseseven++) {
+                            digitalWrite(eraseseven, LOW);
+                        }
+                        delay(1000);
+                        for(int eight = segs[0]; eight <= segs[6]; eight++) {
+                            digitalWrite(eight, HIGH);
+                        }
+                        delay(1000);
+                        for(int eraseeight = segs[0]; eraseeight <= segs[6]; eraseeight++) {
+                            digitalWrite(eraseeight, LOW);
+                        }
+                        delay(1000);
+                        digitalWrite(a, HIGH);
+                        digitalWrite(b, HIGH);
+                        digitalWrite(c, HIGH);
+                        digitalWrite(f, HIGH);
+                        digitalWrite(g, HIGH);
+                        delay(1000);
+                        for(int erasenine = segs[0]; erasenine <= segs[6]; erasenine++) {
+                            digitalWrite(erasenine, LOW);
+                        }
+                        delay(1000);
+                        for(int eight = segs[0]; eight <= segs[6]; eight++) {
+                            digitalWrite(eight, HIGH);
+                        }
+                        delay(1000);
+                        for(int eraseeight = segs[0]; eraseeight <= segs[6]; eraseeight++) {
+                            digitalWrite(eraseeight, LOW);
+                        }
+                        delay(1000);
+                        for(int seven = segs[0]; seven < segs[3]; seven++) {
+                            digitalWrite(seven, HIGH);
+                        }
+                        delay(1000);
+                        for(int eraseseven = segs[0]; eraseseven <= segs[6]; eraseseven++) {
+                            digitalWrite(eraseseven, LOW);
+                        }
+                        delay(1000);
+                        digitalWrite(a, HIGH);
+                        digitalWrite(f, HIGH);
+                        digitalWrite(g, HIGH);
+                        digitalWrite(c, HIGH);
+                        digitalWrite(d, HIGH);
+                        digitalWrite(e, HIGH);
+                        delay(1000);
+                        for(int erasesix = segs[0]; erasesix <= segs[6]; erasesix++) {
+                            digitalWrite(erasesix, LOW);
+                        }
+                        delay(1000);
+                        digitalWrite(a, HIGH);
+                        digitalWrite(f, HIGH);
+                        digitalWrite(g, HIGH);
+                        digitalWrite(c, HIGH);
+                        digitalWrite(d, HIGH);
+                        delay(1000);
+                        for(int erasefive = segs[0]; erasefive <= segs[6]; erasefive++) {
+                            digitalWrite(erasefive, LOW);
+                        }
+                        delay(1000);
+                        digitalWrite(b, HIGH);
+                        digitalWrite(c, HIGH);
+                        digitalWrite(f, HIGH);
+                        digitalWrite(g, HIGH);
+                        delay(1000);
+                        for(int erasefour = segs[0]; erasefour <= segs[6]; erasefour++) {
+                            digitalWrite(erasefour, LOW);
+                        }
+                        delay(1000);
+                        digitalWrite(a, HIGH);
+                        digitalWrite(b, HIGH);
+                        digitalWrite(c, HIGH);
+                        digitalWrite(d, HIGH);
+                        digitalWrite(g, HIGH);
+                        delay(1000);
+                        for(int erasethree = segs[0]; erasethree <= segs[6]; erasethree++) {
+                            digitalWrite(erasethree, LOW);
+                        }
+                        delay(1000);
+                        digitalWrite(a, HIGH);
+                        digitalWrite(b, HIGH);
+                        digitalWrite(g, HIGH);
+                        digitalWrite(e, HIGH);
+                        digitalWrite(d, HIGH);
+                        delay(1000);
+                        for(int erasetwo = segs[0]; erasetwo <= segs[6]; erasetwo++) {
+                            digitalWrite(erasetwo, LOW);
+                        }
+                        delay(1000);
+                        for(int one = segs[1]; one < segs[3]; one++) {
+                            digitalWrite(one, HIGH);
+                        }
+                        delay(1000);
+                        for(int eraseone = segs[1]; eraseone <= segs[6]; eraseone++) {
+                            digitalWrite(eraseone, LOW);
+                        }
+                        delay(1000);
+                        for (int zero = segs[0]; zero < 9; zero++) {
+                            digitalWrite(zero, HIGH);
+                        }
+                        delay(1000);
+                        for(int erasezero = segs[0]; erasezero <= segs[6]; erasezero++) {
+                            digitalWrite(erasezero, LOW);
+                        }
+                    }
+                }
+            }
+                </pre>
+			<video controls>
+				<source src="Assets/Ex03.mp4" type="video/mp4">
+			</video>
+		</div>
+		<p>Neste caso, foi realizada uma junção e adaptação dos dois últimos exemplos. A lógica foi mantida, mas a contagem foi feita tanto em ordem crescente quanto decrescente.</p>
+		<h3>04 - <p>Os leds devem ir ligando e desligando continuamente em sequência:</p>
+		</h3>
+		<p>Ex: Liga led 1, desliga led 1, liga led 2, desliga led 2, liga led 3, desliga led 3, … Loop. O tempo inicia em 5ms e termina em 5s (subindo 15% a cada loop).</p>
+		<div class="container">
+			<pre>
+            int verde = 5;
+            int amarelo = 4;
+            int vermelho = 3;
+            float time = 5;
+            
+            void setup() {
+            for (int i = 3; i <= 5; i++) {
+                pinMode(i, OUTPUT);
+             }
+            }
+
+            void loop() {
+ 
+            for (int led = 3; led <= 5; led++) {
+            digitalWrite(led, HIGH);
+            delay(time);
+            digitalWrite(led, LOW);
+            delay(time);
+                }
+            time += time * 0.15;
+            if (time > 5000) {
+            time = 5;
+            }
+        }
+        </pre>
+			<video controls>
+				<source src="Assets/Ex04.mp4" type="video/mp4">
+			</video>
+		</div>
+		<p>Neste exemplo, cada pino dos LEDs foi definido e o processo de ligar e desligar foi realizado dentro de um laço for. Este laço utiliza um delay que recebe um valor float, time. A cada repetição do loop, este valor aumenta em 15%. Quando o delay atinge 5000 ms (5 segundos), ele retorna ao valor inicial de 5 ms.</p>
+		<h3>05 - <p>Os leds devem ir ligando e desligando continuamente em sequência:</p>
+		</h3>
+		<p>Ex: Liga led 1, desliga led 1, liga led 2, desliga led 2, liga led 3, desliga led 3, … Loop. O tempo inicia em 5s e termina em 5ms (descendo 20% a cada loop).</p>
+		<div class="container">
+			<pre>
+            int verde = 5;
+            int amarelo = 4;
+            int vermelho = 3;
+            float time = 5000;
+            void setup() {
+            for (int i = 3; i <= 5; i++) {
+                pinMode(i, OUTPUT);
+                }
+            }
+
+            void loop() {
+ 
+            for (int led = 3; led <= 5; led++) {
+                digitalWrite(led, HIGH);
+                delay(time);
+                digitalWrite(led, LOW);
+                delay(time);
+                }
+            time -= time * 0.20;
+            if (time < 5) {
+        time = 5000;
+            }
+        }
+        </pre>
+			<video controls>
+				<source src="Assets/Ex05.mp4" type="video/mp4">
+			</video>
+		</div>
+		<p>Este exemplo é semelhante ao anterior, mas com a diferença de que o valor inicial do delay é de 5 segundos. A cada loop, esse valor é reduzido em 20%. Quando o delay atinge 5 ms, ele retorna ao valor inicial de 5 segundos.</p>
+		<h3>06 - <p>Ao apertar o botão uma vez, liga um led. Ao apertar novamente, desliga o primeiro, liga o segundo. Ao apertar novamente, desliga o segundo liga o terceiro.</p>
+		</h3>
+		<div class="container">
+			<pre>
+                int verde = 5;
+                int amarelo = 4;
+                int vermelho = 3;
+                int botao = 2;
+                int acionamento = 0;
+                bool estadobotao = false;
+                bool ultimoestado = false;
+
+                void setup () {
+                for(int i = 3; i <= 5; i++){
+                    pinMode(i, OUTPUT);
+                    }
+                }
+                void loop () {
+                estadobotao = digitalRead (botao);
+                if (estadobotao != ultimoestado && estadobotao == HIGH) {
+                    acionamento++;
+                if (acionamento > 3) {
+                    acionamento = 0;
+                }
+
+                switch (acionamento) {
+                    case 1:
+                        digitalWrite(verde, HIGH);
+                        digitalWrite(amarelo, LOW);
+                        digitalWrite(vermelho, LOW);
+                        break;
+                    case 2:
+                        digitalWrite(verde, LOW);
+                        digitalWrite(amarelo, HIGH);
+                        digitalWrite(vermelho, LOW);
+                        break;
+                    case 3:
+                        digitalWrite(verde, LOW);
+                        digitalWrite(amarelo, LOW);
+                        digitalWrite(vermelho, HIGH);
+                        break;
+                    default:
+      	                digitalWrite(verde, LOW);
+                        digitalWrite(amarelo, LOW);
+                        digitalWrite(vermelho, LOW);
+                        break;
+                        }
+                     }
+                ultimoestado = estadobotao;
+            }
+            </pre>
+			<video controls>
+				<source src="Assets/Ex06.mp4" type="video/mp4">
+			</video>
+		</div>
+		<p>Neste exemplo, foi utilizada uma lógica para contar os acionamentos do botão e armazená-los em uma variável. A leitura do botão determina o incremento dessa contagem. Em seguida, um comando switch é utilizado para executar diferentes ações dependendo do valor da variável. Se o valor exceder a quantidade de LEDs, ele retorna ao valor original, reiniciando o processo.</p>
+		<h3>07- <p>Somar cliques de um botão, e o led pisca em um intervalo de 1s a quantidade de vezes em que foi clicada</p>
+		</h3>
+		<p>Ex:<br> Cliquei uma vez, o led pisca 1x a cada 1s.<br> Cliquei duas vezes, o led pisca 2x a cada 1s.<br> Cliquei cinco vezes, o led pisca 5x a cada 1s.</p>
+		<div class="container">
+			<pre>
+                    int botao = 6;
+                    int led = 4;
+                    int numero = 0;
+
+                    void setup() {
+                    pinMode(botao, INPUT);
+                    pinMode(led, OUTPUT);
+                    }
+
+                    void loop() {
+                        if (digitalRead(botao) == HIGH) {
+                            numero++;
+                            for (int i = 0; i < numero; i++) {
+                                digitalWrite(led, HIGH);
+                                delay(500);
+                                digitalWrite(led, LOW);
+                                delay(500);
+                                    }
+                             }
+                    }
+                </pre>
+			<video controls>
+				<source src="Assets/Ex07.mp4" type="video/mp4">
+			</video>
+		</div>
+		<p>Neste exemplo, o LED é acionado de acordo com o número de vezes que o botão é pressionado. A cada loop, o número de acionamentos é acumulado e adicionado ao valor anterior.</p>
+		<h3>08 - <p>Escreva um programa que acenda o LED sempre que o sensor de movimento detectar movimento e o apague após um intervalo de tempo.</p>
+		</h3>
+		<div class="container">
+			<pre>
+                    const int botao = 6; //""Sensor"
+                    const int led = 4;
+                    int numero = 0;
+                    bool estadosensor = 0;
+
+                    void setup() {
+                    pinMode(botao, INPUT);//"Sensor"
+                    pinMode(led, OUTPUT);
+                    }
+
+                    void loop () {
+                    estadosensor = digitalRead (botao);
+
+                    if(estadosensor == 1){
+                        digitalWrite(led, HIGH);
+                    } else {
+                        delay(1000);
+                        digitalWrite(led, LOW);
+                    }
+                }
+                </pre>
+			<video controls>
+				<source src="Assets/Ex08.mp4" type="video/mp4">
+			</video>
+		</div>
+		<p>Neste exemplo, um botão foi utilizado no lugar de um sensor. Cada vez que o botão é pressionado, o LED é aceso. No entanto, se a pressão for interrompida, o sistema espera um determinado delay e então apaga o LED.</p>
+		<h3>09 - <p>O botão 1 liga o led permanentemente, o botão 2 desliga o led permanentemente, e se pressionados, Ambos ao mesmo tempo, o led ficará piscando até que se solte um deles. O botão que ficar pressionado, mantém o led no estado em que deve estar.</p>
+		</h3>
+		<div class="container">
+			<pre>
+                        int led = 3;
+                        int bot1 = 4;
+                        int bot2 = 6;
+                        bool estadobotao1 = 0;
+                        bool estadobotao2 = 0;
+                        
+                        void setup() {
+                            pinMode(led, OUTPUT);
+                            pinMode(bot1, INPUT);
+                            pinMode(bot2, INPUT);
+                        }
+                        
+                        void loop() {
+                            estadobotao1 = digitalRead(bot1);
+                            estadobotao2 = digitalRead(bot2);
+                        
+                            if (estadobotao1 == HIGH && estadobotao2 == LOW) {
+                                digitalWrite(led, HIGH);
+                            } else if (estadobotao2 == HIGH && estadobotao1 == LOW) {
+                                digitalWrite(led, LOW);
+                            } 
+                        
+                            if (estadobotao1 == HIGH && estadobotao2 == HIGH) {
+                                while (estadobotao1 == HIGH && estadobotao2 == HIGH) {
+                                    digitalWrite(led, LOW);
+                                    delay(500);
+                                    digitalWrite(led, HIGH);
+                                    delay(500);
+                                    estadobotao1 = digitalRead(bot1);
+                                    estadobotao2 = digitalRead(bot2);
+                                }
+                            }
+                        }
+                            </pre>
+			<video controls>
+				<source src="Assets/Ex09.mp4" type="video/mp4">
+			</video>
+		</div>
+		<p>Neste exemplo, foram definidos um LED e dois botões. O funcionamento baseia-se em estruturas de decisão que consideram as leituras de ambos os botões. Há funções para ligar e desligar o LED, além de uma situação em que ambos os botões são pressionados simultaneamente, a qual só é resolvida quando um dos botões é mantido pressionado.</p>
+		<h3>10 - <p>Crie uma lógica a qual o botão deve ligar o led somente se um dos dois botões for pressionado. Se ambos Forem pressionados juntos, o led não deve ligar.</p>
+		</h3>
+		<div class="container">
+			<pre>
+                            int led = 3;
+                            int bot1 = 4;
+                            int bot2 = 6;
+                            bool estadobotao1 = 0;
+                            bool estadobotao2 = 0;
+
+                            void setup () {
+                            pinMode(led, OUTPUT);
+                            pinMode(bot1, INPUT);
+                            pinMode(bot2, INPUT);
+                                }
+
+                            void loop () {
+                            estadobotao1 = digitalRead (bot1);
+                            estadobotao2 = digitalRead (bot2);
+
+                            if(estadobotao1 == HIGH && estadobotao2 == LOW){
+                                digitalWrite(led, HIGH);
+                            } if(estadobotao2 == HIGH && estadobotao1 == LOW){
+                                digitalWrite(led, HIGH);
+                            } else if (estadobotao2 == HIGH && estadobotao1 == HIGH) {
+                                digitalWrite(led, LOW);
+                                }
+                            }
+                        </pre>
+			<video controls>
+				<source src="Assets/Ex10.mp4" type="video/mp4">
+			</video>
+		</div>
+		<p>Este exemplo segue a mesma lógica do anterior, mas com a diferença de que ambos os botões ligam o LED. No entanto, se eles forem acionados simultaneamente, o LED não permanece ligado.</p>
+	</section>
+	<br>
+	<section id="ESP32">
+		<h2>ESP32</h2>
+		<p>Depois de trabalhar com o Arduino, fomos introduzidos ao ESP32, que apresenta melhores recursos em comparação com o Arduino, mas mantém a mesma estrutura de código.</p>
+		<p>Neste caso, utilizamos o WOKWI para simulação:</p>
+		<div class="container">
+			<pre>
+            #include <LiquidCrystal_I2C.h>
+
+                LiquidCrystal_I2C LCD(0x27, 16, 2);
+                
+                void setup() {
+                  LCD.init();
+                  LCD.backlight();
+                  LCD.setCursor(0, 0);
+                  LCD.print("Hello World");
+                  delay(2000);
+                  LCD.clear();
+                }
+                
+                void loop() {
+                  static int seg = 0;
+                  static int min = 0;
+                  static int hor = 0;
+                
+                  LCD.setCursor(0, 0);
+                  if (hor < 10) LCD.print('0');
+                  LCD.print(hor);
+                  LCD.print(':');
+                  if (min < 10) LCD.print('0');
+                  LCD.print(min);
+                  LCD.print(':');
+                  if (seg < 10) LCD.print('0');
+                  LCD.print(seg);
+                  
+                  delay(1000);
+                  LCD.clear();
+                  seg++;
+                  if (seg == 60) { seg = 0; min++; }
+                  if (min == 60) { min = 0; hor++; }
+                  if (hor == 24) { hor = 0; }
+                }                
+        </pre>
+			<video controls>
+				<source src="Assets/ESP32.mp4" type="video/mp4">
+			</video>
+		</div>
+		<p>Esse é um Display LCD 16x2 utilizando ESP32 para realizar um relógio funcional que mostra segundos, minutos e horas.</p>
+		<p>A seguir segue outro exemplo que utiliza o display 16x2, botões e ESP32:</p>
+		<div class="container">
+			<pre>
+        #include <LiquidCrystal_I2C.h>
+
+            LiquidCrystal_I2C LCD = LiquidCrystal_I2C(0x27, 16, 2);
+            
+            int bverde = 34;
+            int bvermelho = 35;
+            int bamarelo = 32;
+            int bazul = 33;
+            int lastchoice;
+            int newchoice;
+            int number;
+            int escolha;
+            bool escolhaverde;
+            bool escolhavermelha;
+            bool escolhaamarela;
+            bool escolhaazul;
+            float tempo = 1000;
+            bool zerado = false;
+            
+            
+            
+            
+            
+            void setup(){
+              LCD.init();
+              LCD.backlight();
+            
+              for(int i = 32; i < 36; i++){
+                pinMode(i, INPUT);
+              }
+            
+              Serial.begin(115200);
+              LCD.setCursor(0,0);
+              LCD.print("Bem-Vindo");
+              LCD.setCursor(0,1);
+              LCD.print("Escolha uma opc:");
+              
+              Serial.println("Opção 01: Contar ao Clicar");
+              Serial.println("Opção 02: Relógio");
+              Serial.println("Opção 03: Zerar Dados");
+            
+              Serial.println("Azul ->");
+              Serial.println("Amarelo <-");
+            
+            
+            
+            
+            
+            }
+            
+            void loop(){
+              //Serial.println("loop");
+              bool memoryblue = digitalRead(bazul);
+              bool memorygreen = digitalRead(bverde);
+              bool memoryyellow = digitalRead(bamarelo);
+              bool memoryred = digitalRead(bvermelho);
+            
+              if (memoryred == HIGH){
+                etapa1();
+              }
+            
+            
+                if(memorygreen == HIGH)
+                  escolhaverde = true;
+            
+                if(memoryred == HIGH)
+                  escolhavermelha = true;
+            
+                 if(memoryyellow == HIGH)
+                  escolhaamarela = true;
+            
+                if(memoryblue == HIGH)
+                    escolhaazul = true;
+                
+                //Serial.println(escolhaverde);
+                //Serial.println(escolhaverde);
+                //Serial.println(escolhaamarela);
+                //Serial.println(escolhavermelha);
+                //Serial.println(escolhaazul);
+            
+                if(escolhaverde != true)
+                  etapa1();
+                
+                if(escolha == 1 && escolhaverde == true && escolhavermelha != true)
+                  etapa2();
+            
+                if(escolha == 2 && escolhaverde == true && escolhavermelha != true)
+                  etapa3();
+                
+                if(escolha == 3 && escolhaverde == true && escolhavermelha != true)
+                  etapa4();    
+            
+            }
+            
+            void etapa1(){
+              bool memorygreen = digitalRead(bverde);
+              bool memoryred = digitalRead(bvermelho);
+              bool memoryblue = digitalRead(bazul);
+              bool memoryyellow = digitalRead(bamarelo);
+            
+              if (memoryred == HIGH){
+                etapa1();
+              }
+              
+            
+              if(memoryblue == HIGH){
+                escolha++;
+              }
+            
+              if(memoryyellow == HIGH){
+                escolha--;
+              }
+            
+              //Serial.println(escolha);
+              newchoice = escolha;
+            
+            if(newchoice != lastchoice){
+              LCD.clear();
+              LCD.setCursor(0,0);
+              
+              switch(escolha){
+                case 1:
+                  LCD.clear();
+                  LCD.print("Contar ao Clicar");
+                  break;
+                case 2:
+                    LCD.clear();
+                    LCD.print("Relogio");
+                    break;
+                case 3:
+                    LCD.clear();
+                    LCD.print("Zerar Dados");
+                    break;
+                default:
+                escolha = 0;
+                break;
+              }
+              }
+            
+            
+            lastchoice = newchoice;
+            
+                //Serial.println(newchoice);
+                    //Serial.println(lastchoice);
+            
+            }
+            
+            void etapa2(){
+              bool memoryblue = digitalRead(bazul);
+              bool memorygreen = digitalRead(bverde);
+              bool memoryyellow = digitalRead(bamarelo);
+              bool memoryred = digitalRead(bvermelho);
+            
+                //Serial.println("teste");
+                  LCD.setCursor(0,0);
+                  LCD.print("Contador          ");
+                  LCD.setCursor(0,1);
+            
+                if(memoryblue == HIGH){
+                  number++;
+                }
+            
+                if(memoryyellow == HIGH){
+                  LCD.clear();
+                  number = 0;
+                }
+            
+                LCD.print(number);
+            }
+            
+            void etapa3(){
+              //Serial.println("Teste");
+              LCD.clear();
+            
+              int seg = 0;
+              int min = 0;
+              int hor = 0;
+            
+              for(hor = 0; hor < 24; hor++){
+                for(min = 0; min < 60; min++){
+                  for(seg = 0; seg < 60; seg++){
+                    bool memoryblue = digitalRead(bazul);
+                    if(memoryblue  == true){
+                      tempo = 250;
+                    }
+                    bool memoryyellow = digitalRead(bamarelo);
+                    if(memoryyellow == true){
+                      tempo = 1000;
+                    }
+                    bool memoryred = digitalRead(bvermelho);
+                    if(memoryred == HIGH){
+                      etapa1();
+                    }
+                    delay(tempo);
+                    LCD.setCursor(0,0);
+                    if(hor < 10){
+                      LCD.print("0");
+                    }
+                    LCD.print(hor);
+                    LCD.print(":");
+                    if(min < 10){
+                      LCD.print("0");
+                    }
+                    LCD.print(min);
+                    LCD.print(":");
+                    if(seg < 10){
+                      LCD.print("0");
+                    }
+                    LCD.print(seg);
+                  }
+                }
+              }
+            }
+            
+            void etapa4(){
+              bool memoryblue = digitalRead(bazul);
+              bool memorygreen = digitalRead(bverde);
+              bool memoryyellow = digitalRead(bamarelo);
+              bool memoryred = digitalRead(bvermelho);
+            
+            if(zerado == false){
+                LCD.setCursor(0,0);
+                LCD.print("Deseja zerar");
+                LCD.setCursor(0,1);
+                LCD.print("todos os dados?");
+                }
+            
+                if(memorygreen == true){
+                  unsigned long tempo = millis();
+                    while(digitalRead(bverde) == HIGH){
+                      if((millis() - tempo) >= 3000){
+                        LCD.clear();
+                        LCD.print("Dados Apagados!");
+                        zerado = true;
+                        break;
+                      }
+                    }
+                }
+            }
+    </pre>
+			<video controls>
+				<source src="Assets/ESP32etapas.mp4" type="video/mp4">
+			</video>
+		</div>
+		<p>Esse é outro exemplo, agora dividido em funcionalidades, um contador que conta os acionamentos do botão azul, um relógio e a opção de apagar os dados. O menu inicial pode ser navegado pelos botões amarelos e azul e a opção pode ser escolhida pelo verde. O contador incrementa a cada acionamento do botão azul e pode ser zerado ao pressionar o amarelo. O relógio funciona como qualquer outro, tendo segundos, minutos e horas e a opção de zerar dados tem a função de confirmação antes de zerar os dados.</p>
+	</section>
+	<br>
+	<section id="VejaMais">
+		<h2>Veja mais:</h2>
+		<a href="https://github.com/GuilhermeAmargo/Entrega-Semaforo.git?authuser=0">Entrega Semáforo</a><br>
+		<a href="https://github.com/GuilhermeAmargo/Lista-de-Exerc-cios-Automa-o-Industrial.git">Lista de Exercícios Automação Industrial</a><br>
+		<a href="https://github.com/GuilhermeAmargo/Lista-de-Exerc-cios-Arduino.git?authuser=0">Lista de Exercícios Arduino</a>
+	</section>
+</body>
+<script src="script.js"></script>
+
+</html>

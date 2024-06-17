@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>Portfólio</title>
+</head>
+
+<body>
+	<h1>Banco de Dados</h1>
+	<section>
+		<h2>Conteúdo:</h2>
+		<ul>
+			<li><a href="#Estrutura">Estrutura de Dados</a></li>
+			<li><a href="#Modelos">Modelos Conceitual, Lógico e Físico de Modelagem de Dados</a></li>
+			<li><a href="#DER">Modelo Entidade-Relacionamento (ER)</a></li>
+			<li><a href="#SGBD">Sistema de Gerenciamento de Banco de Dados</a></li>
+			<li><a href="#DDL">Data Definition Language</a></li>
+			<li><a href="#DML">Data Manipulation Language</a></li>
+			<li><a href="#DQL">Data Query Language</a></li>
+			<li><a href="#Normalização">Normalização</a></li>
+			<li><a href="#NoSQL">Banco de Dados NoSQL</a></li>
+			<li><a href="#Mongo">MongoDB</a></li>
+			<li><a href="#VejaMais">Veja mais</a></li>
+		</ul>
+	</section>
+	<button onclick="topFunction()" id="myBtn"><img src="https://cdn-icons-png.flaticon.com/128/3838/3838683.png" id="arrow"></button>
+	<br>
+	<section id="Estrutura">
+		<h2>Estrutura de Dados:</h2>
+		<p>Na disciplina de Banco de Dados, iniciamos com o conceito e a definição de tipos de estruturas de dados:</p>
+		<ul>
+			<li>Dados estruturados</li>
+			<li>Dados não estruturados</li>
+			<li>Dados semi-estruturados</li>
+		</ul>
+		<p>Os dados estruturados utilizam uma organização predefinida (ex: tabelas) para manter uma estrutura formal que facilita a pesquisa.</p>
+		<p>Os dados não estruturados não possuem um formato específico, tornando sua organização e análise mais complicadas. Normalmente, incluem e-mails, documentos de texto, publicações em redes sociais e arquivos multimídia.</p>
+		<p>Os dados semi-estruturados são um meio-termo entre os dois anteriores, apresentando alguma organização, mas ainda permitindo pesquisas mais fáceis do que nos dados não estruturados.</p>
+		<p>Após isso, exploramos os tipos de modelos de modelagem de dados: conceitual, lógico e físico.</p>
+	</section>
+	<br>
+	<section id="Modelos">
+		<h2>Modelos Conceitual, Lógico e Físico de Modelagem de Dados:</h2>
+		<p>O modelo conceitual é uma representação abstrata que mostra as entidades, seus atributos e o relacionamento entre elas.</p>
+		<div class="container">
+			<img src="Assets/DER.png" alt="Diagrama Entidade-Relacionamento">
+		</div>
+		<p>O modelo lógico foca na criação do sistema da etapa anterior, adotando o sistema de tabelas com linhas e colunas, juntamente com a definição de tipos de dados, chaves primárias e estrangeiras e qualquer tipo de restrição necessária.</p>
+		<div class="container">
+			<img src="Assets/Table.png" alt="Tabela de Banco de Dados">
+		</div>
+		<p>O modelo físico finaliza o processo, sendo a implementação total do banco de dados de acordo com o negócio desenvolvido.</p>
+		<p>Após termos explorado esses conceitos, trabalhamos os modelos conceituais por meio do diagrama entidade-relacionamento:</p>
+	</section>
+	<br>
+	<section id="DER">
+		<h2>Modelo Entidade-Relacionamento (ER):</h2>
+		<p>Para explicar como esses diagramas funcionam, usarei o exemplo a seguir:</p>
+		<div class="container">
+			<img src="Assets/DERExemplo.png" alt="Exemplo de Diagrama Entidade-Relacionamento">
+		</div>
+		<p>Existem três entidades representadas:</p>
+		<ul>
+			<li>Paciente (Patient)</li>
+			<li>Médico (Doctor)</li>
+			<li>Registro (Register)</li>
+		</ul>
+		<p>*Registro é a entidade que surge do relacionamento entre Paciente e Médico.</p>
+		<p>A entidade Paciente tem os seguintes atributos:</p>
+		<ul>
+			<li>Data de nascimento (birth_date)</li>
+			<li>Nome do paciente (name_patient)</li>
+			<li>ID do paciente (id_patient) (PRIMARY KEY - PK)</li>
+		</ul>
+		<p>A entidade Médico tem os seguintes atributos:</p>
+		<ul>
+			<li>Especialização (specialization)</li>
+			<li>Nome do médico (name_doctor)</li>
+			<li>ID do médico (id_doctor) (PRIMARY KEY - PK)</li>
+		</ul>
+		<p>A entidade Registro tem os seguintes atributos:</p>
+		<ul>
+			<li>ID do médico (id_doctor) (FOREIGN KEY - FK)</li>
+			<li>ID do paciente (id_patient) (FOREIGN KEY - FK)</li>
+		</ul>
+		<p>As FOREIGN KEY presentes nessa entidade referenciam as duas outras entidades, formando os relacionamentos entre elas. Um Paciente pode ter vários Registros, e um Médico também pode ter vários Registros.</p>
+	</section>
+	<br>
+	<section id="SGBD">
+		<h2>SGBD - Sistema de Gerenciamento de Banco de Dados:</h2>
+		<p>Paralelamente, utilizamos o SGBD PostgreSQL para a realização dos modelos físicos.</p>
+		<div class="container">
+			<img src="Assets/Post.png" alt="PostgreSQL">
+		</div>
+		<br>
+		<p>Durante a utilização do PostgreSQL, utilizamos diferentes comandos para atender às demandas das aplicações:</p>
+	</section>
+	<br>
+	<section id="DDL">
+		<h2>Comandos DDL - Data Definition Language</h2>
+		<p>Os comandos DDL são utilizados para a criação e definição das tabelas presentes no projeto:</p>
+		<h3>CREATE TABLE</h3>
+		<p>O CREATE TABLE é utilizado para criar uma nova tabela, permitindo a definição de nome e tipo de dados presentes nela.</p>
+		<div class="container">
+			<img src="Assets/Create.png" alt="Comando CREATE TABLE">
+		</div>
+		<h3>ALTER TABLE</h3>
+		<p>O ALTER TABLE é utilizado para modificar um atributo de uma tabela existente, podendo adicionar ou remover colunas, alterar o tipo de dado armazenado e renomear uma coluna ou tabela.</p>
+		<div class="container">
+			<img src="Assets/Alter.png" alt="Comando ALTER TABLE">
+		</div>
+		<h3>DROP TABLE</h3>
+		<p>O DROP TABLE é utilizado para apagar uma tabela existente.</p>
+		<div class="container">
+			<img src="Assets/Drop.png" alt="Comando DROP TABLE">
+		</div>
+	</section>
+	<br>
+	<section id="DML">
+		<h2>Comandos DML - Data Manipulation Language</h2>
+		<p>Os comandos DML são utilizados para inserir valores e manipulá-los através de diferentes comandos:</p>
+		<h3>INSERT</h3>
+		<p>O INSERT é utilizado para inserir conteúdos nas tabelas criadas, respeitando os tipos de dados declarados e suas condições.</p>
+		<div class="container">
+			<img src="Assets/INSERT.png" alt="Comando INSERT">
+		</div>
+		<h3>UPDATE</h3>
+		<p>O UPDATE é utilizado para modificar os dados já inseridos em uma tabela, permitindo alterações futuras.</p>
+		<div class="container">
+			<img src="Assets/Update.png" alt="Comando UPDATE">
+		</div>
+		<h3>DELETE</h3>
+		<p>O DELETE é utilizado para deletar dados presentes em uma tabela.</p>
+		<div class="container">
+			<img src="Assets/Delete.png" alt="Comando DELETE">
+		</div>
+		<h3>SELECT</h3>
+		<p>O SELECT * FROM é utilizado para visualizar uma tabela existente em sua totalidade, permitindo visualizar todos os dados presentes nela e qualquer tipo de alteração necessária.</p>
+		<div class="container">
+			<img src="Assets/SelectCode.png" alt="Comando SELECT">
+		</div>
+		<br>
+		<div class="container">
+			<img src="Assets/Select.png" alt="Exemplo de resultado do comando SELECT">
+		</div>
+	</section>
+	<br>
+	<section id="DQL">
+		<h2>Comandos DQL - Data Query Language</h2>
+		<p>Os comandos DQL são utilizados em conjunto com o SELECT para trazer visualizações de tabelas apenas para análise, sem interferir na execução principal. Utilizam-se diferentes tipos de operadores lógicos e matemáticos, funções de ordenação e agrupamento para realizar essas consultas.</p>
+		<h3>JOIN</h3>
+		<p>O JOIN é uma função que possibilita apresentar dados de tabelas distintas no formato de uma coluna única, servindo apenas para visualização, pois não gera nenhuma outra tabela além das existentes.</p>
+		<h3>JOIN FROM</h3>
+		<p>O JOIN FROM realiza a ação de juntar tabelas distintas em uma única.</p>
+		<div class="container">
+			<img src="Assets/FROM.png" alt="Comando JOIN FROM">
+		</div>
+		<br>
+		<div class="container">
+			<img src="Assets/TableFrom.png" alt="Exemplo de resultado do comando JOIN FROM">
+		</div>
+		<h3>CROSS JOIN</h3>
+		<p>O CROSS JOIN realiza a multiplicação da linha da primeira tabela por cada linha da segunda tabela, resultando na replicação dos valores.</p>
+		<div class="container">
+			<img src="Assets/CrossJoin.png" alt="Comando CROSS JOIN">
+		</div>
+		<br>
+		<div class="container">
+			<img src="Assets/TableFrom.png" alt="Exemplo de resultado do comando CROSS JOIN">
+		</div>
+		<h3>INNER JOIN</h3>
+		<p>O INNER JOIN exibe todas as colunas de ambas as tabelas, mas apenas as linhas que satisfazem a condição ON.</p>
+		<div class="container">
+			<img src="Assets/InnerJoin.png" alt="Comando INNER JOIN">
+		</div>
+		<br>
+		<div class="container">
+			<img src="Assets/InnerJoinTable.png" alt="Exemplo de resultado do comando INNER JOIN">
+		</div>
+		<h3>LEFT JOIN</h3>
+		<p>O LEFT JOIN retorna a tabela da esquerda inteira, retornando a tabela da direita com apenas as linhas que satisfazem a condição ON; caso contrário, estarão vazias.</p>
+		<div class="container">
+			<img src="Assets/LeftJoin.png" alt="Comando LEFT JOIN">
+		</div>
+		<br>
+		<div class="container">
+			<img src="Assets/LeftJoinTable.png" alt="Exemplo de resultado do comando LEFT JOIN">
+		</div>
+		<h3>RIGHT JOIN</h3>
+		<p>O RIGHT JOIN retorna a tabela da direita inteira, retornando a tabela da esquerda com apenas as linhas que satisfazem a condição ON; caso contrário, estarão vazias.</p>
+		<div class="container">
+			<img src="Assets/RightJoin.png" alt="Comando RIGHT JOIN">
+		</div>
+		<br>
+		<div class="container">
+			<img src="Assets/RightJoinTable.png" alt="Exemplo de resultado do comando RIGHT JOIN">
+		</div>
+		<h3>FULL JOIN</h3>
+		<p>O FULL JOIN retorna todas as linhas de ambas as colunas, caso tenham correspondência na condição ON; caso contrário, retornará NULL na linha não correspondente.</p>
+		<div class="container">
+			<img src="Assets/FullJoin.png" alt="Comando FULL JOIN">
+		</div>
+		<br>
+		<div class="container">
+			<img src="Assets/FullJoinTable.png" alt="Exemplo de resultado do comando FULL JOIN">
+		</div>
+	</section>
+	<br>
+	<section ID="Normalização">
+		<h2>Normalização</h2>
+		<p>A normalização é o processo de adaptar um banco de dados para excluir ou reduzir as redundâncias presentes. Essas redundâncias seriam repetições desnecessárias que comprometem o armazenamento e possíveis alterações dos dados no futuro.</p>
+		<h3>Primeira Forma Normal</h3>
+		<p>Uma tabela está na Primeira Forma Normal quando todos os seus atributos contêm apenas valores atômicos e únicos. Isso significa que não deve haver grupos de atributos repetidos ou colunas que contenham mais de um valor.</p>
+		<h3>Segunda Forma Normal</h3>
+		<p>Além de atender a todos os requisitos da Primeira Forma Normal, uma tabela está na Segunda Forma Normal quando todos os atributos não-chave são completamente dependentes da chave primária. Isso evita a redundância parcial e garante que cada informação na tabela dependa da chave primária em sua totalidade.</p>
+		<h3>Terceira Forma Normal</h3>
+		<p>Uma tabela alcança a Terceira Forma Normal quando, além de cumprir as duas primeiras formas normais, não possui dependências transitivas entre os atributos não-chave. Ou seja, cada atributo não-chave deve depender apenas da chave primária e não de outros atributos não-chave.</p>
+	</section>
+	<br>
+	<section id="NoSQL">
+		<h2>Banco de Dados NoSQL:</h2>
+		<p>Os Bancos de Dados NoSQL são projetados para armazenar e gerenciar grandes volumes de dados desestruturados ou semi-estruturados. Eles são conhecidos por sua flexibilidade, pois não exigem um esquema fixo, e são capazes de escalar horizontalmente, o que os torna ideais para aplicações modernas que necessitam de grande volume de dados e alta velocidade de acesso.</p>
+		<h3>Vantagens:</h3>
+		<p>Incluem a ausência de esquema fixo, alta escalabilidade e disponibilidade, e a capacidade de lidar com grandes quantidades de dados.</p>
+		<h3>Desvantagens:</h3>
+		<p>A consistência dos dados pode ser menos garantida em comparação com os bancos de dados relacionais, e pode exigir mais programação devido à falta de uma linguagem de consulta declarativa.</p>
+		<h3>Tipos de Bancos de Dados NoSQL:</h3>
+		<p>Existem várias categorias, incluindo bancos de dados chave/valor, orientados a documentos, famílias de colunas e orientados a grafos.</p>
+	</section>
+	<br>
+	<section id="Mongo">
+		<h2>MongoDB</h2>
+		<p>Começamos a trabalhar com o Banco de Dados NoSQL MongoDB:</p>
+		<div class="container">
+			<img src="https://1000logos.net/wp-content/uploads/2020/08/MongoDB-Logo.png" alt="Logo do MongoDB">
+		</div>
+		<p>Desvantagens: Não é adequado para sistemas onde relacionamentos e operações de JOIN são cruciais.</p>
+		<p>Vantagens: Excelente para lidar com grandes volumes de dados desestruturados e para esquemas de dados variáveis.</p>
+		<p>Operações Básicas: Incluem comandos para criar bancos de dados e coleções, inserir dados e realizar consultas básicas.</p>
+	</section>
+	<br>
+	<section id="VejaMais">
+		<h2>Veja mais:</h2>
+		<a href="https://github.com/GuilhermeAmargo/Banco-de-dados.git">Listas de exercícios</a><br>
+		<a href="https://github.com/GuilhermeAmargo/Projeto-01---Sistema-Educacional.git?authuser=0">Projeto 01 - Sistema Educacional</a><br>
+		<a href="https://github.com/GuilhermeAmargo/MongoDB.git">MongoDB NoSQL</a>
+	</section>
+</body>
+<script src="script.js"></script>
+
+</html>

@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>Portfólio</title>
+</head>
+
+<body>
+	<h1>Desenvolvimento Web</h1>
+	<section>
+		<h2>Conteúdo:</h2>
+		<ul>
+			<li><a href="#Introducao">Introdução</a></li>
+			<li><a href="#basicoHtml">HTML básico</a></li>
+			<li><a href="#semanticoHtml">HTML Semântico</a></li>
+			<li><a href="#IMCCalculadora">Calculadora IMC</a></li>
+			<li><a href="#Curriculo">Currículo</a></li>
+			<li><a href="#Calculadora">Calculadora</a></li>
+			<li><a href="#Login">Página de Login</a></li>
+			<li><a href="#DOM">DOM</a></li>
+			<li><a href="#Projetos">Projetos</a></li>
+			<li><a href="#Veja">Veja mais</a></li>
+		</ul>
+	</section>
+	<button onclick="topFunction()" id="myBtn"><img src="https://cdn-icons-png.flaticon.com/128/3838/3838683.png" id="arrow"></button>
+	<br>
+	<section id="Introducao">
+		<h2>Introdução:</h2>
+		<p>Na disciplina de Desenvolvimento Web foi explorado a criação e customização de páginas web utilizando HTML, CSS e Javascript. Foi realizado diferentes projetos que podem ser visualizados abaixo:</p>
+	</section>
+	<br>
+	<section id="basicoHtml">
+		<h2>HTML Básico:</h2>
+		<p>Nesse exemplo foi realizado um HTML simples somente para aprender algumas funções para gerar conteúdos em uma página, incluindo título, parágrafos e alteração da cor do texto:</p>
+		<div class="container">
+			<pre>
+        <code>
+            &lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Meu primeiro site&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1 style=&quot;color: #00ff00&quot;&gt;Hello World!&lt;/h1&gt;
+    &lt;p&gt;Bem vindo ao meu site!&lt;/p&gt;
+    &lt;p&gt;Nele você encontrará:&lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li style=&quot;color: #008cff&quot;&gt;Receitas&lt;/li&gt;
+        &lt;li style=&quot;color: #ff00b7&quot;&gt;Fofocas&lt;/li&gt;
+        &lt;li style=&quot;color: #00ffe1&quot;&gt;Tutoriais&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;Para tanto, organize-se&lt;/p&gt;
+    &lt;ol&gt;
+        &lt;li style=&quot;color: #d9ff00&quot;&gt;Lendo&lt;/li&gt;
+        &lt;li style=&quot;color: #fb00ff&quot;&gt;Revisando&lt;/li&gt;
+        &lt;li style=&quot;color: #8400ff&quot;&gt;Aplicando&lt;/li&gt;
+    &lt;/ol&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+        </code>
+    </pre>
+			<img src="Assets/Aula01.png" id="aula01">
+		</div>
+	</section>
+	<br>
+	<section id="semanticoHtml">
+		<h2>HTML Semântico:</h2>
+		<p>Nesse exemplo foi utilizado o Figma para a organização prévia dessa página e em seguida foi criada utilizando elementos semânticos header, navbar, main e footer.</p>
+		<div class="container">
+			<pre>
+            <code>
+     &lt;!DOCTYPE html&gt;
+    &lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Aula 2 - HTML Semântico&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #003B72;
+            padding-top: 10px;
+            text-align: center;
+            color: white;
+        }
+        nav {
+            background-color: #BCAE2E;
+            width: 322px;
+            height: 723px;
+            padding-top: 10px;
+            text-align: center;
+            color: white;
+        }
+        footer {
+            background-color: #CCFF00;
+            width: 100%;
+            height: 50px;
+            padding-top: 10px;
+            text-align: center;
+            color: black;
+        }
+        main {
+            margin-left: 322px;
+            margin-top: -723px;
+            background-color: #2A0F56;
+            height: 723px;
+            padding-top: 10px;
+            text-align: center;
+            color: white;
+        }
+    &lt;/style&gt;
+        &lt;/head&gt;
+    &lt;body&gt;
+    &lt;header&gt;HEADER&lt;/header&gt;
+    &lt;nav&gt;NAVBAR&lt;/nav&gt;
+    &lt;main&gt;MAIN&lt;/main&gt;
+    &lt;footer&gt;FOOTER&lt;/footer&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;
+            </code>
+        </pre>
+			<img src="Assets/Aula02.png" id="bigImg">
+		</div>
+	</section>
+	<br>
+	<section id="IMCCalculadora">
+		<h2>Calculadora IMC:</h2>
+		<p>Nesse projeto foi realizado uma calculadora de índice de massa corporal utilizando Javascript:</p>
+		<div class="container">
+			<img src="Assets/Aula03.png" id="bigImg">
+		</div>
+		<div class="container">
+			<pre>
+            <code>
+            &lt;!DOCTYPE html&gt;
+            &lt;html lang=&quot;pt&quot;&gt;
+            &lt;head&gt;
+                &lt;meta charset=&quot;UTF-8&quot;&gt;
+                &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+                &lt;title&gt;Calculadora IMC&lt;/title&gt;
+                &lt;link rel=&quot;stylesheet&quot; href=&quot;padrao.css&quot;&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+            
+                &lt;header&gt;
+                    CALCULADORA IMC
+                &lt;/header&gt;
+                &lt;main&gt;
+                    &lt;div class=&quot;calculadora&quot;&gt;
+                        &lt;p&gt;
+                            &lt;label for=&quot;iPeso&quot;&gt;Peso (kg)&lt;/label&gt;            
+                            &lt;input type=&quot;text&quot; name=&quot;iPeso&quot; id=&quot;iPeso&quot; onchange=&quot;calcular()&quot;&gt;
+                        &lt;/p&gt;
+                        &lt;p&gt;
+                            &lt;label for=&quot;iAltura&quot;&gt;Altura (m)&lt;/label&gt;
+                            &lt;input type=&quot;text&quot; name=&quot;iAltura&quot; id=&quot;iAltura&quot; onchange=&quot;calcular()&quot;&gt;
+                        &lt;/p&gt;
+                        &lt;span id=&quot;resultado&quot;&gt;Resultado&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/main&gt;
+                &lt;footer&gt;
+                    Copyright &amp;copy; 2024
+                &lt;/footer&gt;
+            
+                &lt;script&gt;
+                    function calcular() {
+                        var peso = parseFloat(document.getElementById(&quot;iPeso&quot;).value);
+                        var altura = parseFloat(document.getElementById(&quot;iAltura&quot;).value);
+            
+                        if (isNaN(peso) || isNaN(altura) || peso &lt;= 0 || altura &lt;= 0) {
+                            document.getElementById(&quot;resultado&quot;).innerText = &quot;Por favor, insira valores válidos.&quot;;
+                            return;
+                        }
+            
+                        var imc = peso / (altura * altura);
+                        var resultado = &quot;&quot;;
+            
+                        if (imc &lt; 18.5) {
+                            resultado = &quot;Abaixo do Peso&quot;;
+                        } else if (imc &lt; 25) {
+                            resultado = &quot;Peso Ideal&quot;;
+                        } else if (imc &lt; 30) {
+                            resultado = &quot;Sobrepeso&quot;;
+                        } else if (imc &lt; 35) {
+                            resultado = &quot;Obesidade I&quot;;
+                        } else if (imc &lt; 40) {
+                            resultado = &quot;Obesidade II&quot;;
+                        } else {
+                            resultado = &quot;Obesidade III&quot;;
+                        }
+            
+                        document.getElementById(&quot;resultado&quot;).innerText = `IMC: ${imc.toFixed(2)} - ${resultado}`;
+                    }
+                &lt;/script&gt;
+                
+            &lt;/body&gt;
+            &lt;/html&gt;
+            </code>
+        </pre>
+		</div>
+	</section>
+	<br>
+	<section id="Curriculo">
+		<h2>Currículo em HTML:</h2>
+		<p>Um projeto que foi realizado com o professor Gabriel foi a criação de um currículo:</p>
+		<div class="container">
+			<img src="Assets/Curriculo.png" id="bigImg">
+		</div>
+		<div class="container">
+			<pre>
+        <code>&lt;!DOCTYPE html&gt;
+        &lt;html lang=&quot;pt-br&quot;&gt;
+        &lt;head&gt;
+            &lt;meta charset=&quot;UTF-8&quot;&gt;
+            &lt;title&gt;Currículo de Guilherme Camargo Silva&lt;/title&gt;
+            &lt;style&gt;
+                body { 
+                    font-family:'Times New Roman', Times, serif;
+                    margin: 0; 
+                    background-color: #2E86C1;
+                }
+                .curriculo { 
+                    width: 100%; 
+                    max-width: 800px; 
+                    margin: auto;
+                    background-color: #ffffff;
+                    padding: 20px; 
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /
+                }
+                h2 { 
+                    color: #2E86C1; 
+                }
+                h1 {
+                    color: #0011ff;
+                }
+                img.profile-photo { 
+                    width: 200px; 
+                    height: 200px; 
+                    border-radius: 75%; 
+                }
+                ul { 
+                    list-style-type: none; 
+                }
+                li { 
+                    margin-bottom: 20px; 
+                }
+            &lt;/style&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+            &lt;div class=&quot;curriculo&quot;&gt;
+                &lt;h1&gt;Guilherme Camargo Silva&lt;/h1&gt;
+                &lt;section&gt;
+                    &lt;h2&gt;Identificação&lt;/h2&gt;
+                    &lt;p&gt;Nome: Guilherme Camargo Silva&lt;/p&gt;
+                    &lt;p&gt;Endereço Profissional: Faculdade de Tecnologia SENAI Gaspar Ricardo Júnior, Praça Roberto Mange, Jardim Santa Rosália, 18090110 - Sorocaba, SP - Brasil. 
+                    Telefone: (15) 1532127&lt;/p&gt;
+                &lt;/section&gt;
+                
+                &lt;section&gt;
+                    &lt;h2&gt;Formação acadêmica&lt;/h2&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;2024 - 2026 - Graduação em andamento em SUPERIOR DE TECNOLOGIA EM ANÁLISE E DESENVOLVIMENTO DE SISTEMAS. 
+                            &lt;br&gt;Faculdade de Tecnologia SENAI Gaspar Ricardo Júnior, SENAI, Brasil.&lt;/li&gt;
+                        &lt;li&gt;2022 - 2023 - Curso técnico/profissionalizante em Mecatrônica. 
+                            &lt;br&gt;Escola SENAI Gaspar Ricardo Junior, SENAI, Brasil.&lt;/li&gt;
+                        &lt;li&gt;2021 - 2023 - Ensino Médio (2º grau). 
+                            &lt;br&gt;ESCOLA SESI-SP DE SOROCABA - MANGAL (CE 123), SESI, Brasil.&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/section&gt;
+                
+                &lt;section&gt;
+                    &lt;h2&gt;Formação Complementar&lt;/h2&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;2023 - e-SeriesPro. &lt;br&gt;Escola SENAI Gaspar Ricardo Junior, SENAI, Brasil.&lt;/li&gt;
+                        &lt;li&gt;2023 - WEB 3.0. &lt;br&gt;Escola SENAI Gaspar Ricardo Junior, SENAI, Brasil.&lt;/li&gt;
+                        &lt;li&gt;2023 - DESVENDANDO A BLOCKCHAIN. &lt;br&gt;Escola SENAI Gaspar Ricardo Junior, SENAI, Brasil.&lt;/li&gt;
+                        &lt;li&gt;2023 - DESVENDANDO A INDÚSTRIA 4.0. &lt;br&gt;Escola SENAI Gaspar Ricardo Junior, SENAI, Brasil.&lt;/li&gt;
+                        &lt;li&gt;2023 - PREPARAÇÃO PARA O MUNDO DO TRABALHO &lt;br&gt;Escola SENAI Gaspar Ricardo Junior, SENAI, Brasil.&lt;/li&gt;
+                        &lt;li&gt;2023 - EMPREENDER SENAI. &lt;br&gt;Escola SENAI Gaspar Ricardo Junior, SENAI, Brasil.&lt;/li&gt;
+                        &lt;li&gt;2023 - e-SeriesCore. &lt;br&gt;Escola SENAI Gaspar Ricardo Junior, SENAI, Brasil.&lt;/li&gt;
+                        &lt;li&gt;2022 - ECONOMIA CIRCULAR. &lt;br&gt;Escola SENAI Gaspar Ricardo Junior, SENAI, Brasil.&lt;/li&gt;
+                        &lt;li&gt;2022 - SIEMENS WBT – Princípios básicos de usinagem (WBTZERSOEN). &lt;br&gt;Escola SENAI Gaspar Ricardo Junior, SENAI, Brasil.&lt;/li&gt;
+                        &lt;li&gt;2022 - SIEMENS WBT – Princípios básicos de ferramentas (WBTZERWZEN). &lt;br&gt;Escola SENAI Gaspar Ricardo Junior, SENAI, Brasil.&lt;/li&gt;
+                        &lt;li&gt;2022 - DESVENDANDO O 5G. &lt;br&gt;Escola SENAI Gaspar Ricardo Junior, SENAI, Brasil.&lt;/li&gt;
+                        &lt;li&gt;2022 - PRIVACIDADE E PROTEÇÃO DE DADOS (LGPD). &lt;br&gt;Escola SENAI Gaspar Ricardo Junior, SENAI, Brasil.&lt;/li&gt;
+                        &lt;li&gt;2022 - EXCEL BÁSICO. &lt;br&gt;Escola SENAI Gaspar Ricardo Junior, SENAI, Brasil.&lt;/li&gt;
+                        &lt;li&gt;2022 - COMPETÊNCIA TRANSVERSAL - SEGURANÇA NO TRABALHO. &lt;br&gt;Escola SENAI Gaspar Ricardo Junior, SENAI, Brasil.&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/section&gt;
+                
+                &lt;section&gt;
+                    &lt;h2&gt;Áreas de atuação&lt;/h2&gt;
+                    &lt;p&gt;Área: Robótica, Mecatrônica e Automação.&lt;/p&gt;
+                &lt;/section&gt;
+                
+                &lt;section&gt;
+                    &lt;h2&gt;Idiomas&lt;/h2&gt;
+                    &lt;p&gt;Inglês - Compreende Razoavelmente, Fala Razoavelmente, Lê Razoavelmente, Escreve Razoavelmente.&lt;/p&gt;
+                &lt;/section&gt;
+            &lt;/div&gt;
+        &lt;/body&gt;
+        &lt;/html&gt;
+        </code>
+    </pre>
+		</div>
+	</section>
+	<br>
+	<section id="Calculadora">
+		<h2>Calculadora:</h2>
+		<p>Foi criado uma calculadora utilizando HTML, CSS e Javascript com as funcionalidades básicas de cálculo:</p>
+		<div class="container">
+			<img src="Assets/Calculadora.png" id="bigImg">
+		</div>
+		<div class="container">
+			<pre>
+            <code>&lt;!DOCTYPE html&gt;
+            &lt;html lang=&quot;pt-br&quot;&gt;
+            &lt;head&gt;
+                &lt;meta charset=&quot;UTF-8&quot;&gt;
+                &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+                &lt;link rel=&quot;icon&quot; href=&quot;Calculadora.png&quot; type=&quot;image/png&quot;&gt;
+                &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
+                &lt;title&gt;Calculadora&lt;/title&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+                &lt;div class=&quot;calculator&quot;&gt;
+                    &lt;div class=&quot;history&quot; id=&quot;history&quot;&gt;&lt;/div&gt;
+                    &lt;div class=&quot;display&quot; id=&quot;display&quot;&gt;0&lt;/div&gt;
+                    &lt;div class=&quot;calculator-buttons&quot;&gt;            
+                        &lt;button onclick=&quot;clearDisplay()&quot;&gt;C&lt;/button&gt;
+                        &lt;button onclick=&quot;addToDisplay('(')&quot;&gt;(&lt;/button&gt;
+                        &lt;button onclick=&quot;addToDisplay(')')&quot;&gt;)&lt;/button&gt;
+                        &lt;button class=&quot;operator&quot; onclick=&quot;addOperator('/')&quot;&gt;/&lt;/button&gt;
+                        &lt;button onclick=&quot;addToDisplay('7')&quot;&gt;7&lt;/button&gt;
+                        &lt;button onclick=&quot;addToDisplay('8')&quot;&gt;8&lt;/button&gt;
+                        &lt;button onclick=&quot;addToDisplay('9')&quot;&gt;9&lt;/button&gt;
+                        &lt;button class=&quot;operator&quot; onclick=&quot;addOperator('*')&quot;&gt;*&lt;/button&gt;
+                        &lt;button onclick=&quot;addToDisplay('4')&quot;&gt;4&lt;/button&gt;
+                        &lt;button onclick=&quot;addToDisplay('5')&quot;&gt;5&lt;/button&gt;
+                        &lt;button onclick=&quot;addToDisplay('6')&quot;&gt;6&lt;/button&gt;
+                        &lt;button class=&quot;operator&quot; onclick=&quot;addOperator('-')&quot;&gt;-&lt;/button&gt;
+                        &lt;button onclick=&quot;addToDisplay('1')&quot;&gt;1&lt;/button&gt;
+                        &lt;button onclick=&quot;addToDisplay('2')&quot;&gt;2&lt;/button&gt;
+                        &lt;button onclick=&quot;addToDisplay('3')&quot;&gt;3&lt;/button&gt;
+                        &lt;button class=&quot;operator&quot; onclick=&quot;addOperator('+')&quot;&gt;+&lt;/button&gt;
+                        &lt;button onclick=&quot;addToDisplay('0')&quot;&gt;0&lt;/button&gt;
+                        &lt;button onclick=&quot;addToDisplay('.')&quot;&gt;.&lt;/button&gt;
+                        &lt;button class=&quot;operator&quot; onclick=&quot;calculate()&quot;&gt;=&lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+            </code>
+        </pre>
+		</div>
+	</section>
+	<br>
+	<section id="Login">
+		<h2>Página de Login:</h2>
+		<p>Um projeto realizado com o professor Gabriel foi uma tela de login que redireciona para uma nova página:
+		<p>
+		<div class="container">
+			<img src="Assets/Login.png" id="bigImg">
+		</div>
+		<br>
+		<div class="container">
+			<img src="Assets/LoginFeito.png" id="bigImg">
+		</div>
+		<div class="container">
+			<pre>
+                <code>&lt;!DOCTYPE html&gt;
+                &lt;html lang="en"&gt;
+                &lt;head&gt;
+                    &lt;meta charset="UTF-8"&gt;
+                    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+                    &lt;title>Login&lt;/title&gt;
+                    &lt;link rel="stylesheet" href="style.css"&gt;
+                &lt;/head&gt;
+                &lt;body&gt;
+                
+                &lt;div class="Container"&gt;
+                    &lt;div class="Login"&gt;
+                        
+                        &lt;form action="Site.html"&gt;
+                            &lt;h1&gt;Bem vindo de volta!&lt;/h1&gt;
+                
+                            &lt;p&gt;Insira suas credenciais para o login&lt;/p&gt;
+                            
+                            &lt;input type="text" placeholder="CPF ou Email" class="Usuario" id="User"&gt;
+                            
+                            &lt;input type="password" placeholder="*" class="Senha" id="Senha"&gt;
+                
+                            &lt;input type="submit" value="Entrar" class="Enviar" id="Enviar"&gt;
+                
+                        &lt;/form&gt;
+                
+                    &lt;/div&gt;
+                
+                &lt;/div&gt;
+                
+                &lt;script src="JavaScript.js"&gt;&lt;/script&gt;
+                
+                &lt;/body&gt;
+                &lt;/html&gt;</code>
+            </pre>
+		</div>
+	</section>
+	<br>
+	<section id="DOM">
+		<h2>DOM</h2>
+		<p>Trabalhamos com o DOM, que nesse exemplo é em forma de um formulário que insere conteúdo em tabelas:</p>
+		<div class="container">
+			<img src="Assets/DomNome.png" id="bigImg">
+		</div>
+		<div class="container">
+			<pre><code>&lt;!DOCTYPE html&gt;
+                &lt;html lang=&quot;en&quot;&gt;
+                &lt;head&gt;
+                    &lt;meta charset=&quot;UTF-8&quot;&gt;
+                    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+                    &lt;title&gt;Document&lt;/title&gt;
+                    &lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;&gt;
+                &lt;/head&gt;
+                &lt;body&gt;
+                    &lt;div class=&quot;forms&quot;&gt;
+                        &lt;input type=&quot;text&quot; id=&quot;bot1&quot;&gt;
+                        &lt;input type=&quot;text&quot; id=&quot;bot2&quot;&gt;
+                        &lt;input type=&quot;text&quot; id=&quot;bot3&quot;&gt;
+                        &lt;button onclick=&quot;add()&quot;&gt;Adicionar&lt;/button&gt;
+                    &lt;/div&gt;
+                    &lt;script src=&quot;java.js&quot;&gt;&lt;/script&gt;
+                &lt;/body&gt;
+                &lt;/html&gt;
+                </code></pre>
+		</div>
+		<p>Este código trabalha da mesma forma porém os campos são identificados por tipo de conteúdo:</p>
+		<div class="container">
+			<img src="Assets/DOM.png" id="bigImg">
+		</div>
+		<div class="container">
+			<pre>
+                <code>&lt;!DOCTYPE html&gt;
+                &lt;html lang="pt-BR"&gt;
+                &lt;head&gt;
+                    &lt;meta charset="UTF-8"&gt;
+                    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+                    &lt;title&gt;DOM - Exercício&lt;/title&gt;
+                    &lt;link rel="stylesheet" href="css/style.css"&gt;
+                    &lt;script src="js/script.js" defer&gt;&lt;/script&gt;
+                &lt;/head&gt;
+                &lt;body&gt;
+                    &lt;div class="container"&gt;
+                        &lt;h1&gt;Cadastro de Grupos&lt;/h1&gt;
+                        &lt;form action="#" id="groupForm"&gt;
+                            &lt;label for="groupName"&gt;Nome do Grupo:&lt;/label&gt;
+                            &lt;input type="text" name="groupName" id="groupName" required&gt;
+                
+                            &lt;label for="groupLeader"&gt;Líder:&lt;/label&gt;
+                            &lt;input type="text" name="groupLeader" id="groupLeader"&gt;
+                            
+                            &lt;label for="groupMembers"&gt;Membros:&lt;/label&gt;
+                            &lt;input type="text" name="groupMembers" id="groupMembers"&gt;
+                            
+                            &lt;input type="hidden" name="groupRow" id="groupRow"&gt;
+                            &lt;button id="groupSave" type="submit"&gt;Cadastrar Grupo&lt;/button&gt;
+                        &lt;/form&gt;
+                
+                        &lt;h2&gt;Grupos cadastrados&lt;/h2&gt;
+                        &lt;table id="groupTable"&gt;
+                            &lt;tr&gt;
+                                &lt;th&gt;Nome do Grupo&lt;/th&gt;
+                                &lt;th&gt;Líder&lt;/th&gt;
+                                &lt;th&gt;Membros&lt;/th&gt;
+                                &lt;th&gt;Ações&lt;/th&gt;
+                            &lt;/tr&gt;
+                        &lt;/table&gt;
+                    &lt;/div&gt;
+                &lt;/body&gt;
+                &lt;/html&gt;
+                </code>
+            </pre>
+		</div>
+	</section>
+	<br>
+	<section id="Projetos">
+		<h2>Projetos:</h2>
+		<p>Esse é um exemplo de um projeto que uniu atividades realizadas anteriormente em forma de iframes, contendo uma calculadora comum, uma calculadora de INSS e um simulador para inserir HTML, CSS e JavaScript para visualizar o resultado na própria página:</p>
+		<div class="container">
+			<img src="Assets/Projeto.png" id="bigImg">
+		</div>
+		<div class="container">
+			<pre>
+            <code>&lt;!DOCTYPE html&gt;
+            &lt;html lang="en"&gt;
+            &lt;head&gt;
+                &lt;meta charset="UTF-8"&gt;
+                &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+                &lt;link rel="stylesheet" href="style.css"&gt;
+                &lt;title&gt;Calculadoras&lt;/title&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+                &lt;header class="header"&gt;Calculadoras&lt;/header&gt;
+                &lt;nav class="navbar"&gt;
+                    &lt;p&gt;&lt;button class="button" onclick="mat()"&gt;Matemática&lt;/button&gt;&lt;/p&gt;
+                    &lt;p&gt;&lt;button class="button" onclick="inss()"&gt;INSS&lt;/button&gt;&lt;/p&gt;
+                    &lt;p&gt;&lt;button class="button" onclick="createIframe()"&gt;Simulação&lt;/button&gt;&lt;/p&gt;
+                &lt;/nav&gt;
+                &lt;article class="main" id="main-article"&gt;&lt;/article&gt;
+                &lt;footer class="footer"&gt;&lt;/footer&gt;
+            
+                &lt;script src="script.js"&gt;&lt;/script&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+            </code>
+        </pre>
+		</div>
+	</section>
+	<br>
+	<section id="Veja">
+		<h2>Veja mais:</h2>
+		<a href="https://github.com/GuilhermeAmargo/DesenvolvimentoWeb">Desenvolvimento Web</a>
+	</section>
+	<br>
+</body>
+<script src="script.js"></script>
+
+</html>

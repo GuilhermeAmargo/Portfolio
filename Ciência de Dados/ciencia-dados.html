@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>Portfólio</title>
+</head>
+
+<body>
+	<h1>Ciência de Dados</h1>
+	<section>
+		<h2>Conteúdo:</h2>
+		<ul>
+			<li><a href="#Colab">Google Colab</a></li>
+			<li><a href="#Estatística">Estatística</a></li>
+			<li><a href="#Amostragem">Amostragem</a></li>
+			<li><a href="#EscalasMedição">Escalas de Medição</a></li>
+			<li><a href="#TendênciasCentrais">Tendências Centrais</a></li>
+			<li><a href="#MedidasDispersão">Medidas de Dispersão</a></li>
+			<li><a href="#Vejamais">Veja mais</a></li>
+		</ul>
+	</section>
+	<button onclick="topFunction()" id="myBtn"><img src="https://cdn-icons-png.flaticon.com/128/3838/3838683.png" id="arrow"></button>
+	<br>
+	<section id="Colab">
+		<h2>Google Colab</h2>
+		<p>Na disciplina de Ciência de Dados, trabalhamos com o Google Colab para trabalhar com Python: <a href="https://colab.research.google.com/drive/1ZVoIsQuvdmjd2MyrkuFbGK-Y1nhaM2pw?usp=sharing">Google Colab</a>
+		</p>
+		<img src="Assets/Colab.png" id="exemplo">
+	</section>
+	<br>
+	<section id="Estatística">
+		<h2>Estatística:</h2>
+		<p>Estatística é a disciplina que utiliza métodos para coletar, organizar e interpretar dados. Ela começa com a estatística descritiva, que resume dados observados para facilitar a compreensão. Os dados podem vir de uma população inteira ou de uma amostra representativa. A estatística inferencial segue, usando amostras para fazer generalizações sobre uma população. As variáveis estudadas podem ser qualitativas, como categorias, ou quantitativas, como números.</p>
+	</section>
+	<br>
+	<section id="Amostragem">
+		<h2>Amostragem:</h2>
+		<p>Exploramos os tipos de amostragem:</p>
+		<ul>
+			<li>Aleatória simples</li>
+			<li>Sistemática</li>
+			<li>Estratificada</li>
+		</ul>
+		<p>Começamos utilizando o Colab e importamos 3 bibliotecas para usar nos códigos:</p>
+		<img src="Assets/Bibliotecas.png" id="exemplo">
+		<p>Juntamente com a importação do DataFrame do Titanic:</p>
+		<img src="Assets/Dataframe.png" id="exemplo">
+		<h3>Amostra Aleatória</h3>
+		<p>Realizamos uma amostra aleatória no DataFrame do Titanic:</p>
+		<img src="Assets/AmostraAleatoria.png" id="exemplo">
+		<p>Que retorna uma amostra aleatória de 10 linhas do DataFrame:</p>
+		<img src="Assets/RetornoAmostraAleatoria.png" id="exemplo2">
+		<h3>Amostra Sistemática</h3>
+		<p>Em seguida, realizamos uma amostra sistemática, ou seja, trabalha com intervalos.</p>
+		<img src="Assets/AmostraSistematica.png" id="exemplo">
+		<br>
+		<img src="Assets/RetornoAmostraSistematica.png" id="exemplo2">
+		<h3>Amostra Estratificada</h3>
+		<p>Realizamos a amostra estratificada e produzimos duas amostras relacionadas ao sexo dos passageiros de forma aleatória:</p>
+		<img src="Assets/AmostraEstratificada.png" id="exemplo">
+		<p>Que retorna os seguintes:</p>
+		<img src="Assets/EstratificadaFemale.png" id="exemplo2">
+		<br>
+		<img src="Assets/EstratificadaMale.png" id="exemplo2">
+		<p>E outra amostra mista:</p>
+		<img src="Assets/EstratificadaMista.png" id="exemplo">
+		<br>
+		<img src="Assets/RetornoAmostraMista.png" id="exemplo2">
+	</section>
+	<br>
+	<section id="EscalasMedição">
+		<h2>Escalas de Medição:</h2>
+		<p>Exploramos os tipos de escalas de medição:</p>
+		<h3>Escala Nominal</h3>
+		<p>Utilizada para categorizar variáveis sem uma ordem inerente. Exemplos incluem gênero, etnia e outras variáveis categóricas. A única medida de tendência central aplicável é a moda.</p>
+		<h3>Escala Ordinal</h3>
+		<p>Aplica uma ordem específica às variáveis. É adequada para classificar conceitos subjetivos como satisfação e opiniões. Não permite calcular a distância exata entre as variáveis.</p>
+		<h3>Escala Intervalar</h3>
+		<p>Mostra a posição e a diferença exata entre as variáveis. Permite comparações e cálculos de diferenças, como nas escalas de temperatura Celsius e Fahrenheit.</p>
+		<h3>Escala de Razão</h3>
+		<p>Possui todas as propriedades da escala intervalar, mas também inclui um zero absoluto, permitindo comparações de medidas absolutas e proporções. Exemplos incluem idade e preço.</p>
+	</section>
+	<br>
+	<section id="TendênciasCentrais">
+		<h2>Tendências Centrais:</h2>
+		<p>As tendências centrais foram utilizadas para compreender mais os dados presentes em diferentes conjuntos.</p>
+		<h3>Moda</h3>
+		<p>A moda em um conjunto de dados é o valor com maior frequência. No caso abaixo, o pandas.DataFrame.mode realiza a função de encontrar a moda no DataFrame que, no caso, é 37.</p>
+		<img src="Assets/Moda.png" id="exemplo2">
+		<p>Essa função de moda não encontra somente moda simples em um conjunto, podendo ser bimodal (duas modas), polimodal (três ou mais modas) ou ser amodal (não há modas).</p>
+		<img src="Assets/Bimodal.png" id="exemplo2">
+		<br>
+		<img src="Assets/Polimodal.png" id="exemplo2">
+		<br>
+		<img src="Assets/Amodal.png" id="exemplo">
+		<p>Dessa forma, é possível até mesmo retirar uma moda dos valores do DataFrame do Titanic:</p>
+		<img src="Assets/ModaTitanic.png" id="exemplo2">
+		<p>E após isso, foram criados gráficos com os valores do DataFrame do Titanic:</p>
+		<img src="Assets/Grafico.png" id="exemplo">
+		<h3>Mediana</h3>
+		<p>A mediana é o valor central em um grupo de elementos.</p>
+		<p>Nesse caso abaixo, a mediana é o valor exato do meio, pois essa cadeia de elementos é ímpar:</p>
+		<img src="Assets/Mediana.png" id="exemplo">
+		<p>Caso os elementos fossem pares, a mediana seria a média entre os dois valores centrais:</p>
+		<img src="Assets/MedianaImpar.png" id="exemplo">
+		<p>O método median() desconsidera valores não numéricos ao definir a mediana, podendo, se desejado, passar parâmetros que considerem NaN ou substituam os mesmos por outro valor:</p>
+		<img src="Assets/MedianaFunções.png" id="exemplo">
+		<p>Sendo possível aplicar a mediana no DataFrame do Titanic:</p>
+		<img src="Assets/MedianaTitanic.png" id="exemplo2">
+		<h3>Média</h3>
+		<p>A média é calculada somando todos os elementos de um conjunto e, após isso, realizando a divisão pelo número de elementos do mesmo conjunto.</p>
+		<p>No caso abaixo, foi realizada a média do DataFrame do Titanic:</p>
+		<img src="Assets/Média.png" id="exemplo">
+		<h3>Percentil</h3>
+		<p>O percentil pega um conjunto de dados e transforma sua totalidade em 100%, logo cada posição se torna uma fração desse total. Com base nisso, é possível encontrar um valor específico com base no percentil %.</p>
+		<img src="Assets/Percentil.png" id="exemplo">
+		<p>pd.DataFrame([21(0%), 23(10%), 31(20%), 46(30%), 54(40%), 64(50%), 78(60%), 89(70%), 97(80%), 99(90%), 105(100%)])</p>
+		<p>Nesse caso, o percentil que foi selecionado foi 40%, sendo retornado o valor 54. Caso o percentil selecionado não esteja presente no conjunto, o valor será retirado do intervalo entre os valores.</p>
+		<img src="Assets/PercentilIntervalo.png" id="exemplo">
+		<p>O percentil 45% não se encontra no conjunto, porém é possível utilizar o intervalo entre 40% e 50%: 55(41%), 56(42%), 57(43%), 58(44%), 59(45%).</p>
+		<p>Sendo possível obter mais de um percentil:</p>
+		<img src="Assets/2Percentil.png" id="exemplo">
+		<h3>Quartil</h3>
+		<p>O quartil é o mesmo conceito do percentil, porém referente somente a 3 valores de percentil: 25%, 50% e 75%.</p>
+		<p>Aqui estão os valores dos quartis:</p>
+		<img src="Assets/Quartil.png" id="exemplo">
+		<p>Caso seja utilizado o describe, ele exibe contagem, média, desvio padrão, valor mínimo, valor máximo e todos os quartis:</p>
+		<img src="Assets/QuartilDescribe.png" id="exemplo">
+	</section>
+	<br>
+	<section id="MedidasDispersão">
+		<h2>Medidas de Dispersão:</h2>
+		<p>As medidas de dispersão são utilizadas para verificar a variabilidade dentro de um conjunto de dados, tornando-se mais confiável nessa amostra.</p>
+		<h3>Amplitude</h3>
+		<p>A amplitude é a diferença entre o maior e o menor valor dentro de um conjunto de dados.</p>
+		<img src="Assets/Amplitude.png" id="exemplo">
+		<p>No exemplo acima, o menor dado no DataFrame é 1 enquanto o maior é 79, logo a amplitude = 78</p>
+		<p>Amplitude = 79 - 1</p>
+		<p>Amplitude = 78</p>
+		<h3>Variância</h3>
+		<p>A variância é uma forma de medir o quanto os valores de um grupo de números são diferentes entre si. Se todos os números forem iguais, a variância é zero, porque não há diferença entre eles. Mas se os números forem muito diferentes uns dos outros, a variância será maior.</p>
+		<p>Um exemplo de variância:</p>
+		<img src="Assets/Variancia.png" id="exemplo">
+	</section>
+	<br>
+	<section id="Vejamais">
+		<h2>Veja mais:</h2>
+		<a href="https://colab.research.google.com/drive/1ZVoIsQuvdmjd2MyrkuFbGK-Y1nhaM2pw?usp=sharing">Google Colab</a>
+	</section>
+</body>
+<script src="script.js"></script>
+
+</html>
